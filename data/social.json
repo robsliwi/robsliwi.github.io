@@ -1,0 +1,14 @@
+{
+  "links": [
+    {
+      "name": "github",
+      "url": "https://github.com/robsliwi",
+      "image": "images/social/github.svg"
+    },
+    {
+      "name": "twitter",
+      "url": "https://twitter.com/bazillus",
+      "image": "images/social/twitter.svg"
+    }
+  ]
+}

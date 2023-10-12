@@ -20,8 +20,17 @@
       in
       {
         formatter = pkgs.nixpkgs-fmt;
-        # no default package (yet)
-        # packages.default = pkgs.hello;
+        packages = {
+          website = pkgs.stdenv.mkDerivation {
+            pname = "robsliwi website";
+            version = version;
+            src = ./.;
+            nativeBuildInputs = [ pkgs.hugo ];
+            buildPhase = "hugo";
+            installPhase = "cp -r public $out";
+          };
+          default = self.packages.${system}.website;
+        };
         devShells.default = with pkgs; mkShell {
           packages = [ hugo ];
         };
